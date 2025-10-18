@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
@@ -30,20 +30,20 @@ function App() {
       loadUsers();
       loadConversations();
     }
-  }, []);
+  }, [loadUsers, loadConversations]);
 
   // Load users
-  const loadUsers = async () => {
+  const loadUsers = useCallback(async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/users`);
       setUsers(response.data);
     } catch (err) {
       console.error("Kullanıcılar yüklenirken hata oluştu:", err);
     }
-  };
+  }, []);
 
   // Load conversations
-  const loadConversations = async () => {
+  const loadConversations = useCallback(async () => {
     if (!currentUser) return;
     
     try {
@@ -52,10 +52,10 @@ function App() {
     } catch (err) {
       console.error("Konuşmalar yüklenirken hata oluştu:", err);
     }
-  };
+  }, [currentUser]);
 
   // Load private messages
-  const loadPrivateMessages = async (otherUserId) => {
+  const loadPrivateMessages = useCallback(async (otherUserId) => {
     if (!currentUser || !otherUserId) return;
     
     try {
@@ -67,7 +67,7 @@ function App() {
     } catch (err) {
       console.error("Özel mesajlar yüklenirken hata oluştu:", err);
     }
-  };
+  }, [currentUser]);
 
   // Login function
   const handleLogin = async (e) => {
@@ -247,7 +247,7 @@ function App() {
       }, 3000);
       return () => clearInterval(interval);
     }
-  }, [currentUser, selectedUser]);
+  }, [currentUser, selectedUser, loadUsers, loadConversations, loadPrivateMessages]);
 
   // Login/Register Page
   if (!isLoggedIn) {
