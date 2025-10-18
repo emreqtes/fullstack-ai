@@ -1,58 +1,58 @@
-# Duygu Analizi API Servisi
+---
+title: Turkish Sentiment Analysis API
+emoji: 🤖
+colorFrom: blue
+colorTo: purple
+sdk: gradio
+sdk_version: 4.44.0
+app_file: app.py
+pinned: false
+license: mit
+short_description: Turkish sentiment analysis API for chat applications
+---
 
-Bu servis Hugging Face Spaces'te çalışan bir duygu analizi API'sidir.
+# Turkish Sentiment Analysis API
 
-## Özellikler
+This API analyzes Turkish text sentiment and returns positive/neutral/negative scores.
 
-- Metinlerin duygu analizini yapar (pozitif/nötr/negatif)
-- Türkçe ve İngilizce metinleri destekler
-- Gerçek zamanlı analiz
-- RESTful API endpoint'i
+## Features
 
-## Kullanım
+- ✅ Turkish language support
+- ✅ Real-time sentiment analysis
+- ✅ Confidence scores
+- ✅ REST API endpoint
+- ✅ Gradio web interface
 
-### Gradio Web Arayüzü
-- Hugging Face Spaces'te otomatik olarak web arayüzü sağlanır
-- Metin girişi ve analiz sonuçları görsel olarak gösterilir
+## API Usage
 
-### API Endpoint
+```python
+import requests
+
+# Send text for analysis
+response = requests.post(
+    "https://your-space-name.hf.space/api/predict",
+    json={"data": ["Bu harika bir gün!"]}
+)
+
+result = response.json()
+print(result)
 ```
-POST /api/predict
-Content-Type: application/json
 
-{
-    "data": ["Analiz edilecek metin"]
-}
-```
+## Model
 
-### Yanıt Formatı
+Uses `cardiffnlp/twitter-roberta-base-sentiment-latest` for sentiment analysis.
+
+## Response Format
+
 ```json
 {
     "sentiment": "pozitif",
-    "confidence": 0.95,
+    "confidence": 0.85,
     "scores": {
-        "pozitif": 0.95,
-        "nötr": 0.03,
-        "negatif": 0.02
+        "pozitif": 0.85,
+        "nötr": 0.10,
+        "negatif": 0.05
     },
-    "text": "Analiz edilecek metin"
+    "text": "Bu harika bir gün!"
 }
 ```
-
-## Teknik Detaylar
-
-- **Model**: cardiffnlp/twitter-roberta-base-sentiment-latest
-- **Framework**: Gradio + Transformers
-- **Hosting**: Hugging Face Spaces (ücretsiz)
-- **Port**: 7860
-
-## Kurulum
-
-```bash
-pip install -r requirements.txt
-python app.py
-```
-
-## Entegrasyon
-
-Bu API, backend servisinden HTTP istekleri ile çağrılır ve frontend'e duygu skorları gönderilir.
