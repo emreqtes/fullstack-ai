@@ -6,6 +6,9 @@ Bu proje, kullanıcıların mesajlaşarak sohbet edebildiği ve yazışmaların 
 
 Kullanıcıların mesajlaşarak sohbet edebildiği, yazışmaların AI tarafından duygu analizi yapılarak canlı olarak gösterildiği basit bir web + mobil uygulama. Backend, frontend ve AI servisinin tamamı ücretsiz platformlarda deploy edilmiştir.
 <img width="1919" height="923" alt="Ekran görüntüsü 2025-10-18 173249" src="https://github.com/user-attachments/assets/576b5e72-cd31-4b2c-88be-6696b4b506c1" />
+<img width="1906" height="893" alt="Ekran görüntüsü 2025-10-18 173301" src="https://github.com/user-attachments/assets/8eb43abc-9426-4274-a5db-c80f50e92b8e" />
+<img width="1917" height="920" alt="Ekran görüntüsü 2025-10-18 173311" src="https://github.com/user-attachments/assets/0217f75d-fbe8-4ed3-8630-65dbb5249d84" />
+
 
 ## 🔐 Demo Kullanıcıları
 
