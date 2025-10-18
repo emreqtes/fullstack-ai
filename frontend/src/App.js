@@ -76,51 +76,53 @@ function App() {
   // Login Page
   if (!isLoggedIn) {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h1>🤖 AI Destekli Chat</h1>
-          <p>Güvenli mesajlaşma ve duygu analizi</p>
-        </div>
-
-        {error && <div style={{color: 'red', padding: '10px'}}>{error}</div>}
-
-        <form onSubmit={handleLogin} style={{padding: '20px'}}>
-          <div style={{marginBottom: '10px'}}>
-            <label>Kullanıcı Adı: </label>
-            <input
-              type="text"
-              value={loginForm.username}
-              onChange={(e) => setLoginForm({...loginForm, username: e.target.value})}
-              disabled={loading}
-              placeholder="Kullanıcı adınızı girin"
-            />
+      <div className="app">
+        <div className="auth-container">
+          <div className="auth-header">
+            <h1>💬 AI Destekli Sohbet</h1>
+            <p>Güvenli mesajlaşma ve duygu analizi</p>
           </div>
-          <div style={{marginBottom: '10px'}}>
-            <label>Şifre: </label>
-            <input
-              type="password"
-              value={loginForm.password}
-              onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
-              disabled={loading}
-              placeholder="Şifrenizi girin"
-            />
-          </div>
-          <button type="submit" disabled={loading}>
-            {loading ? 'Giriş yapılıyor...' : 'Giriş Yap'}
-          </button>
-        </form>
 
-        <div style={{padding: '20px'}}>
-          <h3>Demo Kullanıcıları</h3>
-          <div style={{textAlign: 'left', maxWidth: '300px', margin: '0 auto'}}>
-            <div onClick={() => setLoginForm({username: 'admin1', password: '1234'})} style={{cursor: 'pointer', padding: '5px', background: '#f0f0f0', margin: '5px 0', borderRadius: '3px'}}>
-              <strong>admin1</strong> / 1234
+          {error && <div className="error-message">{error}</div>}
+
+          <form onSubmit={handleLogin} className="auth-form">
+            <div className="form-group">
+              <label>Kullanıcı Adı</label>
+              <input
+                type="text"
+                value={loginForm.username}
+                onChange={(e) => setLoginForm({...loginForm, username: e.target.value})}
+                disabled={loading}
+                placeholder="Kullanıcı adınızı girin"
+              />
             </div>
-            <div onClick={() => setLoginForm({username: 'alice05', password: '1234'})} style={{cursor: 'pointer', padding: '5px', background: '#f0f0f0', margin: '5px 0', borderRadius: '3px'}}>
-              <strong>alice05</strong> / 1234
+            <div className="form-group">
+              <label>Şifre</label>
+              <input
+                type="password"
+                value={loginForm.password}
+                onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
+                disabled={loading}
+                placeholder="Şifrenizi girin"
+              />
             </div>
-            <div onClick={() => setLoginForm({username: 'bob22', password: '1234'})} style={{cursor: 'pointer', padding: '5px', background: '#f0f0f0', margin: '5px 0', borderRadius: '3px'}}>
-              <strong>bob22</strong> / 1234
+            <button type="submit" disabled={loading} className="auth-button">
+              {loading ? 'Giriş yapılıyor...' : 'Giriş Yap'}
+            </button>
+          </form>
+
+          <div className="demo-users">
+            <h3>Demo Kullanıcıları</h3>
+            <div className="demo-user-list">
+              <div className="demo-user" onClick={() => setLoginForm({username: 'admin1', password: '1234'})}>
+                <strong>admin1</strong> / 1234
+              </div>
+              <div className="demo-user" onClick={() => setLoginForm({username: 'alice05', password: '1234'})}>
+                <strong>alice05</strong> / 1234
+              </div>
+              <div className="demo-user" onClick={() => setLoginForm({username: 'bob22', password: '1234'})}>
+                <strong>bob22</strong> / 1234
+              </div>
             </div>
           </div>
         </div>
@@ -130,40 +132,57 @@ function App() {
 
   // Main Chat Page
   return (
-    <div className="App">
-      <div className="App-header">
-        <h1>🤖 AI Destekli Chat</h1>
-        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-          <span>👤 {currentUser.username}</span>
-          <button onClick={handleLogout}>Çıkış</button>
+    <div className="app">
+      <div className="chat-container">
+        <div className="chat-header">
+          <h1>💬 AI Destekli Sohbet</h1>
+          <div className="user-info">
+            <span className="current-user">👤 {currentUser.username}</span>
+            <button onClick={handleLogout} className="logout-button">
+              Çıkış
+            </button>
+          </div>
         </div>
-      </div>
 
-      {error && <div style={{color: 'red', padding: '10px'}}>{error}</div>}
+        {error && <div className="error-message">{error}</div>}
 
-      <div style={{padding: '20px'}}>
-        <h2>🟢 Online Kullanıcılar ({users.length})</h2>
-        <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
-          {users.map(user => (
-            <div key={user.id} style={{
-              padding: '10px',
-              background: user.id === currentUser.id ? '#e3f2fd' : '#f5f5f5',
-              borderRadius: '5px',
-              border: user.id === currentUser.id ? '2px solid #2196f3' : '1px solid #ddd'
-            }}>
-              <span>👤 {user.username}</span>
-              {user.id === currentUser.id && <span style={{color: '#2196f3'}}> (Sen)</span>}
+        <div className="chat-main">
+          <div className="chat-sidebar">
+            <div className="users-section">
+              <h3>🟢 Online Kullanıcılar ({users.length})</h3>
+              <div className="users-list">
+                {users.map(user => (
+                  <div key={user.id} className={`user-item ${user.id === currentUser.id ? 'current' : ''}`}>
+                    <span className="user-avatar">👤</span>
+                    <span className="user-name">{user.username}</span>
+                    {user.id === currentUser.id && <span className="you-badge">(Sen)</span>}
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
+          
+          <div className="chat-content">
+            <div className="welcome-message">
+              <h2>👋 Hoş Geldin, {currentUser.username}!</h2>
+              <p>Sol taraftan kullanıcıları görebilirsin.</p>
+              <div className="features">
+                <div className="feature">
+                  <span className="feature-icon">🤖</span>
+                  <span>AI Duygu Analizi</span>
+                </div>
+                <div className="feature">
+                  <span className="feature-icon">💬</span>
+                  <span>Özel Mesajlaşma</span>
+                </div>
+                <div className="feature">
+                  <span className="feature-icon">📱</span>
+                  <span>WhatsApp Tarzı Durum</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div style={{padding: '20px', textAlign: 'center'}}>
-        <h2>🎉 Chat Uygulaması Hazır!</h2>
-        <p>Backend: ✅ Çalışıyor</p>
-        <p>AI Service: ✅ Çalışıyor</p>
-        <p>Frontend: ✅ Çalışıyor</p>
-        <p>Kullanıcı Sayısı: {users.length}</p>
       </div>
     </div>
   );
