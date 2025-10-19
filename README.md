@@ -25,9 +25,9 @@ Sistemde önceden oluşturulmuş demo kullanıcıları:
 
 ## 🌐 Canlı Demo Linkleri
 
-- **Web Chat**: [Vercel'de Deploy Edilecek](https://your-app.vercel.app)
-- **AI Servisi**: [Hugging Face Spaces'te Deploy Edilecek](https://huggingface.co/spaces/your-username/sentiment-analysis)
-- **Backend API**: [Render'da Deploy Edilecek](https://your-app.onrender.com)
+- **Web Chat**: https://fullstack-ai-beta.vercel.app/
+- **AI Servisi**: https://huggingface.co/spaces/emreqtes/turkish-sentiment-analysis
+- **Backend API**: https://fullstack-ai-klct.onrender.com
 - **GitHub Repository**: [https://github.com/emreqtes/fullstack-ai](https://github.com/emreqtes/fullstack-ai)
 
 ## 🚀 Temel Özellikler (MVP)
