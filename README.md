@@ -35,10 +35,8 @@ Sistemde önceden oluşturulmuş demo kullanıcıları:
 - ✅ **React Web**: Basit chat ekranı, kullanıcı metin yazar → mesaj listesi + anlık duygu skoru
 - ✅ **Kullanıcılar Arası Sohbet**: Birden fazla kullanıcı aynı anda sohbet edebilir
 - ✅ **WhatsApp Tarzı Özel Mesajlaşma**: Kullanıcıdan kullanıcıya özel mesajlaşma
-- ✅ **Mesaj Durumu Takibi**: Gönderildi/ulaştı/okundu durumları (WhatsApp tarzı)
 - ✅ **Alıcı Seçme**: Kullanıcılar arasından alıcı seçerek mesaj gönderme
 - ✅ **Real-time Updates**: Mesajlar 3 saniyede bir otomatik güncellenir
-- ✅ **Online Kullanıcı Listesi**: Hangi kullanıcıların online olduğu görünür
 - ✅ **Konuşma Listesi**: Özel mesajlaşma geçmişi ve okunmamış mesaj sayısı
 - ✅ **React Native CLI**: Mobilde aynı chat ekranı (React Native CLI ile geliştirme)
 - ✅ **.NET Core API**: Kullanıcı kaydı (sadece rumuz) ve mesajların veritabanına kaydı
@@ -96,62 +94,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-## 🌐 Çalışır Demo Linkleri
 
-### Web Chat (Vercel)
-- **URL**: [Vercel Deploy Linki - Hazırlanıyor]
-- **Durum**: ✅ Frontend hazır, deployment bekleniyor
-- **Özellikler**: Modern chat arayüzü, AI duygu analizi görselleştirmesi
-
-### Mobil APK (React Native)
-- **Durum**: 🔄 3. günde geliştirilecek
-- **Platform**: Android APK
-- **Özellikler**: Native mobil chat deneyimi
-
-### AI Endpoint (Hugging Face Spaces)
-- **URL**: [Hugging Face Space - Hazırlanıyor]
-- **Durum**: ✅ AI servisi hazır, deployment bekleniyor
-- **Model**: cardiffnlp/twitter-roberta-base-sentiment-latest
-
-### API URL (Render)
-- **URL**: [Render API - Hazırlanıyor]
-- **Durum**: ✅ Backend hazır, deployment bekleniyor
-- **Özellikler**: RESTful API, Swagger dokümantasyonu
-
-### Local Test
-- **Backend**: http://localhost:5000/api
-- **Swagger UI**: http://localhost:5000/swagger
-- **Frontend Test**: frontend/test.html
-- **AI Servisi**: Python app.py
-
-## Test Sonuçları ✅
-
-### Backend API Testleri
-```bash
-# Kullanıcı oluşturma
-POST http://localhost:5000/api/users
-Body: {"username": "testuser"}
-Response: 201 Created - {"id":1,"username":"testuser","createdAt":"2025-10-17T13:51:19.0614004Z"}
-
-# Mesaj gönderme + AI analizi
-POST http://localhost:5000/api/messages
-Body: {"content": "Bu harika bir gün!", "userId": 1}
-Response: 201 Created - {"id":1,"content":"Bu harika bir gün!","sentiment":"pozitif","sentimentConfidence":0.85}
-
-# Mesajları listeleme
-GET http://localhost:5000/api/messages
-Response: 200 OK - [{"id":1,"content":"Bu harika bir gün!","sentiment":"pozitif",...}]
-```
-
-### AI Servisi Testleri
-```bash
-# Python test scripti çalıştırıldı
-python test_ai_service.py
-# Sonuç: Tüm test metinleri doğru analiz edildi
-# Pozitif: "Bu harika bir gün!" → pozitif (85%)
-# Negatif: "Hiçbir şey yapmak istemiyorum" → negatif (85%)
-# Nötr: "Normal bir gün geçirdim" → nötr (85%)
-```
 
 ### Frontend Dosyaları
 - ✅ package.json (dependencies)
@@ -204,29 +147,7 @@ python test_ai_service.py
 - [ ] API ve AI servislerini entegre et
 - [ ] README dokümantasyonu ve kod açıklamalarını ekle
 
-## ✅ Case Çalışması Durumu
 
-### Teslim Gereksinimleri
-- ✅ **GitHub Repository**: frontend/, backend/, ai-service/ klasör yapısı
-- ✅ **README**: Kurulum adımları ve AI araçları açıklaması
-- ✅ **Demo Linkleri**: Vercel, Render, Hugging Face hazırlığı
-- ✅ **Kod Hakimiyeti**: Her dosyanın işlevi açıklanmış
-- ✅ **Manuel Kod**: AI dışı kod bölümleri belirtilmiş
-
-### MVP Özellikler
-- ✅ **React Web**: Chat ekranı + duygu skoru
-- ✅ **.NET Core API**: Kullanıcı kaydı + mesaj kayıt
-- ✅ **Python AI**: Hugging Face duygu analizi
-- ✅ **Gerçek Zamanlı**: Backend → AI → Frontend akışı
-
-### Teknoloji Stack
-- ✅ **Frontend**: React + Vercel
-- ✅ **Backend**: .NET Core + SQLite + Render
-- ✅ **AI**: Python + Gradio + Hugging Face Spaces
-
-**1-2. günlerdeki TÜM gereksinimler tamamlandı! 3. güne geçmeye hazır!** 🎯
-
-## Deployment Adımları
 
 ### Frontend (Vercel)
 1. GitHub repository'sini Vercel'e bağla
@@ -269,10 +190,6 @@ Bu projede AI araçları şu alanlarda kullanılmıştır:
 ### Manuel Kod Yazımı (AI Dışı)
 Aşağıdaki bölümler AI'ye bırakılmadan elle yazılmıştır:
 - **Backend API Controller'ları**: UsersController.cs, MessagesController.cs
-- **Veritabanı Sorguları**: Entity Framework LINQ sorguları
-- **Frontend State Yönetimi**: React hooks ve state logic
-- **CSS Animasyonları**: Modern CSS3 animasyonları
-- **Error Handling**: Try-catch blokları ve hata yakalama
 - **Mock AI Servisi**: Türkçe kelime bazlı sentiment analizi
 
 ## 📁 Dosya Yapısı ve İşlevleri
