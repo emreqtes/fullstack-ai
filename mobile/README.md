@@ -38,10 +38,7 @@ Eksik kalan modül, sistemin genel çalışmasına engel teşkil etmemektedir.
 - ✅ **Kullanıcı Arama**: Özel mesajlar için kullanıcı arama
 - ✅ **Real-time Updates**: Mesajlar otomatik güncellenir
 - ✅ **AI Destekli Duygu Analizi**: Pozitif/nötr/negatif duygu skorları
-![1000031449](https://github.com/user-attachments/assets/db88deef-3997-4cd1-917d-c02f69d3d732)
-![1000031453](https://github.com/user-attachments/assets/b001b898-14ee-4910-84a7-071930572292)
-![1000031450](https://github.com/user-attachments/assets/ccb75743-9efb-4216-b91a-eda1da7a07c7)
-![1000031451](https://github.com/user-attachments/assets/d3f0e59a-378b-4515-b1ff-70c71cdf0885)
+
 
 
 ## Proje Yapısı
@@ -161,7 +158,9 @@ Mobil uygulama backend API'si ile tam entegre çalışır:
 - iOS build hatası: `cd ios && pod install`
 - API bağlantı hatası: Backend'in çalıştığını ve IP adresini kontrol et
 - Özel mesajlar görünmüyor: Backend'de PrivateMessagesController'ın çalıştığını kontrol et
+![1000031449](https://github.com/user-attachments/assets/db88deef-3997-4cd1-917d-c02f69d3d732)
 
+![1000031450](https://github.com/user-attachments/assets/ccb75743-9efb-4216-b91a-eda1da7a07c7)
 ## Lisans
 
 MIT License
