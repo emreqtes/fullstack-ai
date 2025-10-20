@@ -29,6 +29,7 @@ Sistemde önceden oluşturulmuş demo kullanıcıları:
 - **AI Servisi**: https://huggingface.co/spaces/emreqtes/turkish-sentiment-analysis
 - **Backend API**: https://fullstack-ai-klct.onrender.com
 - **GitHub Repository**: [https://github.com/emreqtes/fullstack-ai](https://github.com/emreqtes/fullstack-ai)
+- **APK dosyası drive linki : https://drive.google.com/drive/folders/1X1z1FNQn_H-yR1JxLbnD2LMitBh1954s?usp=sharing
 
 ## 🚀 Temel Özellikler (MVP)
 
