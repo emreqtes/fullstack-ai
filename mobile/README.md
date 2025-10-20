@@ -1,25 +1,40 @@
-# AI Destekli Duygu Analizi Chat Uygulaması
 
-Bu proje, kullanıcıların mesajlaşarak sohbet edebildiği ve yazışmaların AI tarafından duygu analizi yapılarak canlı olarak gösterildiği bir web + mobil uygulamadır.
+📱 Mobil Uygulama (React Native CLI)
 
-## 🎯 Proje Özeti
+Mobil uygulama, web tarafındaki fonksiyonları temel alarak React Native CLI ile geliştirilmiştir.
+Aşağıdaki modüller tamamlanmıştır:
 
-Kullanıcıların mesajlaşarak sohbet edebildiği, yazışmaların AI tarafından duygu analizi yapılarak canlı olarak gösterildiği basit bir web + mobil uygulama. Backend, frontend ve AI servisinin tamamı ücretsiz platformlarda deploy edilmiştir.
+✅ Kullanıcı kaydı (rumuz ile)
+✅ Giriş yapma ve kullanıcı doğrulama
+✅ Genel sohbet odasında mesaj gönderme ve listeleme
+✅ Duygu analizi entegrasyonu (pozitif / nötr / negatif)
+✅ Backend (.NET Core) ve AI servisi (Hugging Face Spaces) ile tam entegrasyon
 
-## 🌐 Canlı Demo Linkleri
+⚙️ Geliştirme Durumu
 
-- **Web Chat**: https://fullstack-ai-beta.vercel.app/
-- **AI Servisi**: https://huggingface.co/spaces/emreqtes/turkish-sentiment-analysis
-- **Backend API**: https://fullstack-ai-klct.onrender.com
-- **GitHub Repository**: [https://github.com/emreqtes/fullstack-ai](https://github.com/emreqtes/fullstack-ai)
+“Özel mesajlaşma” modülünde kullanıcılar arası birebir mesajlaşma yapısı kurulmuş olsa da bazı hata ve senkronizasyon problemleri nedeniyle bu kısım tam olarak stabilize edilememiştir.
 
-## 🚀 Temel Özellikler (MVP)
+Genel sohbet ve duygu analizi fonksiyonları ise sorunsuz ve anlık çalışmaktadır.
+
+Özel mesaj özelliği backend tarafında hazır endpoint’lere sahiptir; mobil tarafta gerekli bağlantılar büyük ölçüde tamamlanmıştır.
+
+Geliştirme süresi sınırlı olduğundan bu bölüm “geliştirme sonrası iyileştirme planı”na alınmıştır.
+
+🔗 APK Dosyası
+
+Uygulamanın Android build çıktısı aşağıdaki bağlantı üzerinden erişilebilir:
+📦 Mobil APK : https://drive.google.com/drive/folders/1X1z1FNQn_H-yR1JxLbnD2LMitBh1954s?usp=drive_link
+
+🧠 Not
+
+Projede amaçlanan tüm uçtan uca veri akışı (React → .NET → Python AI) başarıyla tamamlanmış, mobil ve web tarafları aynı altyapıyı kullanacak şekilde tasarlanmıştır.
+Eksik kalan modül, sistemin genel çalışmasına engel teşkil etmemektedir.
+# Temel Özellikler (MVP)
 
 - ✅ **React Web**: Basit chat ekranı, kullanıcı metin yazar → mesaj listesi + anlık duygu skoru
 - ✅ **React Native Mobile**: Android ve iOS için mobil uygulama
 - ✅ **Web-Mobil Entegrasyonu**: Web kullanıcıları ile mobil kullanıcılar arasında mesajlaşma
 - ✅ **Genel Sohbet**: Tüm kullanıcıların görebileceği genel mesajlar
-- ✅ **Özel Mesajlaşma**: Kullanıcıdan kullanıcıya özel mesajlaşma
 - ✅ **Kullanıcı Arama**: Özel mesajlar için kullanıcı arama
 - ✅ **Real-time Updates**: Mesajlar otomatik güncellenir
 - ✅ **AI Destekli Duygu Analizi**: Pozitif/nötr/negatif duygu skorları
