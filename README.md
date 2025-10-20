@@ -8,9 +8,7 @@ Kullanıcıların mesajlaşarak sohbet edebildiği, yazışmaların AI tarafınd
 <img width="1901" height="987" alt="Ekran görüntüsü 2025-10-19 210401" src="https://github.com/user-attachments/assets/fddf9ac0-e99a-411e-bfe7-cf5aacbcd1f8" />
 <img width="1897" height="980" alt="Ekran görüntüsü 2025-10-19 210417" src="https://github.com/user-attachments/assets/59d3db01-e53c-42a4-ab27-92a6d82f034d" />
 <img width="1915" height="986" alt="Ekran görüntüsü 2025-10-19 210429" src="https://github.com/user-attachments/assets/f4736fab-affb-415a-ae59-fb0878084347" />
-![1000031449](https://github.com/user-attachments/assets/db88deef-3997-4cd1-917d-c02f69d3d732)
 
-![1000031450](https://github.com/user-attachments/assets/ccb75743-9efb-4216-b91a-eda1da7a07c7)
 
 
 ## 🔐 Demo Kullanıcıları
